@@ -45,8 +45,8 @@ while True:
                     time.sleep(0.1)
                 
                 # 3. EVALUACIÓN POST-CICLO
-                # Si el bucle terminó, los robots han parado. 
-                # Evaluamos si pararon porque acabaron, o porque hubo un E-Stop.
+                # Si el bucle terminó, los robots han parado
+                # Evaluamos si pararon porque acabaron, o porque hubo un E-Stop
                 if RDK.getParam("ESTADO_SISTEMA") == "MARCHA" and not prog_main.Busy():
                     print("ÉXITO: Ciclo de soldadura completado limpiamente. Reportando al ERP...")
                     
