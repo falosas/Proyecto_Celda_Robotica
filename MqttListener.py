@@ -42,13 +42,13 @@ def on_message(mqttc, obj, msg):
             
             # --- CASO 2: REARME (RESET) ---
             elif datos.get("alarma") == False and datos.get("evento") == "reset":
-                # El sistema está sano, pero NO arranca. Pasa a ESPERA.
+                # El sistema está sano, pero NO arranca. Pasa a ESPERA
                 RDK.setParam("ESTADO_SISTEMA", "ESPERA")
                 print("REARME ACEPTADO. Esperando pulsación de MARCHA...")
             
             # --- CASO 3: INICIO DE PRODUCCIÓN (MARCHA) ---
             elif datos.get("alarma") == False and datos.get("evento") == "inicio":
-                # Solo cambiamos la variable. El Orquestador se encargará del resto.
+                # Solo cambiamos la variable. El Orquestador se encargará del resto
                 RDK.setParam("ESTADO_SISTEMA", "MARCHA")
                 print("ORDEN DE MARCHA: Autorizando producción.")
 
